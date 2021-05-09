@@ -117,13 +117,22 @@ namespace HashTable
             return default(V);
         }
 
-
+        /// <summary>
+        /// Getting position using hashcode function.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         protected int GetArrayPosition(K key)
         {
             int position = key.GetHashCode() % size;
             return Math.Abs(position);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
         protected LinkedList<KeyValue<K, V>> GetLinkedList(int position)
         {
             LinkedList<KeyValue<K, V>> linkedList = items[position];
@@ -134,13 +143,30 @@ namespace HashTable
             }
             return linkedList;
         }
-    }
 
-    public class KeyValue<k, v>
-    {
-        public k Key { get; set; }
-        public v Value { get; set; }
+        /// <summary>
+        /// Remove word from paragraph.
+        /// </summary>
+        /// <param name="hash"></param>
+        /// <param name="word"></param>
+        public void Remove(MyMapNode<int, string> hash, string word)
+        {
+            for (int key = 0; key < hash.size; key++)
+            {
+                if (hash.Get(key).Equals(word))
+                {
+                    hash.Remove(key);
+                    Console.WriteLine("You have removed word -----> " + word + " : from paragraph.");
+                }
+            }
+        }
 
+        public class KeyValue<k, v>
+        {
+            public k Key { get; set; }
+            public v Value { get; set; }
+
+        }
     }
 }
 
