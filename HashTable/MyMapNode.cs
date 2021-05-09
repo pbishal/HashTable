@@ -51,7 +51,7 @@ namespace HashTable
                 {
                     foundItem = item;
                     string str = foundItem.Value.ToString();
-                    Console.WriteLine("found data = " + str);
+                    Console.WriteLine("Founded data are  =  " + str);
                     string[] arr = str.Split();
                     Dictionary<string, int> dict = new Dictionary<string, int>();
                     for (int i = 0; i < arr.Length; i++)
